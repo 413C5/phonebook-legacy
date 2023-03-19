@@ -1,12 +1,14 @@
-import React from "react"
+import React from "react";
 
-const Filter = ({ filter, handleSetFilter }) => {
+const Filter = ({filter,handleFilterChange}) => {
     return (
-        /* console.log(filter,handleSetFilter), */
-        <p>
-            filter shown with <input value={filter} onChange={handleSetFilter} />
-        </p>
+        <form>
+            <p>
+                filter shown with: <input value={filter} onChange={handleFilterChange} />
+            </p>
+        </form>
     )
 }
+
 
 export default Filter
