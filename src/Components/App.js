@@ -3,20 +3,19 @@ import Filter from "./Filter";
 import axios from 'axios';
 import PersonForm from "./PersonForm";
 import Persons from "./Persons";
+import personService from "../Services/persons"
 
 const App = () => {
     const [persons, setPersons] = useState([])
-  
     const [newName, setNewName] = useState('')
     const [newNumber, setNewNumber] = useState('')
     const [filter, setNewFilter] = useState('')
   
     useEffect(()=>{
-      axios
-      .get('http://localhost:3001/persons')
+      personService
+      .getAll()
       .then(response=>{
-        //console.log(response.data)
-        setPersons(response.data)
+        setPersons(response)
       })
     },[])
   
@@ -30,16 +29,21 @@ const App = () => {
           name: newName,
           number: newNumber
         }
-        setPersons(persons.concat(nameObject))
-        setNewName('')
-        setNewNumber('')
+
+        //Agregar nueva persona, enviandola al backend
+        personService
+          .create(nameObject)
+          .then(response=>{
+            setPersons(persons.concat(response))
+            setNewName('')
+            setNewNumber('')
+          })
       }
     }
   
     const filteredPersons = persons.filter((person) =>
       person.name.toLowerCase().includes(
         filter.toLowerCase()))
-  
   
     const handleNameChange = (event) => {
       setNewName(event.target.value)
