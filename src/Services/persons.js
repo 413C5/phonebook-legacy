@@ -1,8 +1,10 @@
 import axios from "axios";
 
+//Componentes que manejan la comunicación con el servidor
+
 const url = 'http://localhost:3001/persons'
 
-//Select
+//Select *
 const getAll = () => {
     const request = axios.get(url)
     return (

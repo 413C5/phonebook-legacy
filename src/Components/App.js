@@ -11,6 +11,7 @@ const App = () => {
     const [newNumber, setNewNumber] = useState('')
     const [filter, setNewFilter] = useState('')
   
+    //Recuperación de datos
     useEffect(()=>{
       personService
       .getAll()
