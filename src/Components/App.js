@@ -11,7 +11,7 @@ const App = () => {
   const [newNumber, setNewNumber] = useState('')
   const [filter, setNewFilter] = useState('')
   const [message, setMessage] = useState(null)
-  const [state,setState]=useState(false)
+  const [state, setState] = useState(false)
 
   //Recuperación de datos
   useEffect(() => {
@@ -62,11 +62,17 @@ const App = () => {
           })
 
         /* .catch(error=>{
-          setErrorMessage(`Information of '${person2.name}' has already been updated from server`)
+          setMessage(`Information of ${person.name} has already been updated from server`)
+          console.log(`Information of ${person.name} has already been updated from server`)
+          setState(false)
+
           .setTimeout(() => {
-            setErrorMessage(null)
+            setMessage(null)
+            setState(false)
           }, 5000)
-          setPersons(persons.filter(x=>x.id!==person.id))
+
+          setPersons(persons.filter(x=>x.name!==newName))
+          
         }) */
 
         console.log(`Updated ${newName} with number ${newNumber}`)
@@ -96,7 +102,7 @@ const App = () => {
           }, 5000);
         })
 
-        console.log(`Added ${newName}`)
+      console.log(`Added ${newName}`)
     }
   }
 
@@ -120,12 +126,12 @@ const App = () => {
   }
 
   const deletePerson = (id) => {
+
     //Objeto a eliminar
     const person = persons.find(x => x.id === id)
 
     //Creacion de nuevo arreglo sin el objeto
     const person2 = persons.filter(x => x.id !== person.id);
-
 
     /* console.log(person)
     console.log(person2) */
@@ -145,13 +151,18 @@ const App = () => {
           }, 5000);
         })
 
-      /* .catch(error=>{
-        setErrorMessage(`Information of '${person2.name}' has already been removed from server`)
-        setTimeout(() => {
-          setErrorMessage(null)            
-        }, 5000)
-        setPersons(person.filter(x=>x.id!==id))
-      }) */
+        .catch(error => {
+          setMessage(`Information of ${person.name} has already been removed from server`)
+          console.log(`Information of ${person.name} has already been removed from server`)
+          setState(false)
+
+          //Se da un tiempo de 5 seg
+          setTimeout(() => {
+            setMessage(null)
+            setState(false)
+          }, 5000)
+          setPersons(persons.filter(x => x.id !== id))
+        })
 
       console.log(`Deleted ${person.name} with an id of ${person.id} `)
     }
