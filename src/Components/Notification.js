@@ -14,12 +14,12 @@ const Notification = ({ message, state }) => {
         )
 
     //Caso operación exitosa
-    else if(message!==null && state===true)
-            return(
-                <div className="good">
-                    {message}
-                </div>
-            )
+    else if (message !== null && state === true)
+        return (
+            <div className="good">
+                {message}
+            </div>
+        )
 }
 
 

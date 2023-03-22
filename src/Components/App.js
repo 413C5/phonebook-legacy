@@ -51,8 +51,8 @@ const App = () => {
                 return response
             }))
 
-            //Se muestra el mensaje por 5 seg
             setMessage(`Updated ${newName} with number ${newNumber}`)
+            console.log(`Updated ${newName} with number ${newNumber}`)
             setState(true)
             setTimeout(() => {
               setMessage(null)
@@ -61,21 +61,15 @@ const App = () => {
 
           })
 
-        /* .catch(error=>{
-          setMessage(`Information of ${person.name} has already been updated from server`)
-          console.log(`Information of ${person.name} has already been updated from server`)
-          setState(false)
-
-          .setTimeout(() => {
-            setMessage(null)
+          .catch(error => {
+            setMessage(`Error updating ${newName}. That contact was recently deleted`)
+            console.log(`Error updating ${newName}. That contact was recently deleted`)
             setState(false)
-          }, 5000)
-
-          setPersons(persons.filter(x=>x.name!==newName))
-          
-        }) */
-
-        console.log(`Updated ${newName} with number ${newNumber}`)
+            setTimeout(() => {
+              setMessage(null)
+              setState(false)
+            }, 5000)
+          })
       }
     }
 
@@ -95,11 +89,20 @@ const App = () => {
           setNewNumber('')
           setMessage(`Added ${newName}`)
           setState(true)
-          //Despues de 5 segundos desaparece el mensaje
           setTimeout(() => {
             setMessage(null)
             setState(false)
           }, 5000);
+        })
+
+        .catch(error => {
+          setMessage(`Error adding contact`)
+          console.log(`Error adding contact`)
+          setState(false)
+            .setTimeout(() => {
+              setMessage(null)
+              setState(false)
+            }, 5000)
         })
 
       console.log(`Added ${newName}`)
@@ -141,9 +144,8 @@ const App = () => {
         .then(response => {
           //Se actualiza el arreglo mostrado en pantalla
           setPersons(person2)
-
-          //Desaparece el mensaje posterior a 5 seg
           setMessage(`Deleted ${person.name} with an id of ${person.id} `)
+          console.log(`Deleted ${person.name} with an id of ${person.id} `)
           setState(true)
           setTimeout(() => {
             setMessage(null)
@@ -155,16 +157,12 @@ const App = () => {
           setMessage(`Information of ${person.name} has already been removed from server`)
           console.log(`Information of ${person.name} has already been removed from server`)
           setState(false)
-
-          //Se da un tiempo de 5 seg
           setTimeout(() => {
             setMessage(null)
             setState(false)
           }, 5000)
           setPersons(persons.filter(x => x.id !== id))
         })
-
-      console.log(`Deleted ${person.name} with an id of ${person.id} `)
     }
   }
 

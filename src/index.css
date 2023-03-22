@@ -1,5 +1,5 @@
-.error{
-    color:red;
+.error {
+    color: red;
     background-color: lightgrey;
     font-size: 20px;
     border-style: solid;
@@ -9,8 +9,8 @@
 }
 
 
-.good{
-    color:green;
+.good {
+    color: green;
     background-color: lightgrey;
     font-size: 20px;
     border-style: solid;
