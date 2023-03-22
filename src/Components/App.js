@@ -88,13 +88,13 @@ const App = () => {
           setNewName('')
           setNewNumber('')
           setMessage(`Added ${newName}`)
+          console.log(`Added ${newName}`)
           setState(true)
           setTimeout(() => {
             setMessage(null)
             setState(false)
           }, 5000);
         })
-
         .catch(error => {
           setMessage(`Error adding contact`)
           console.log(`Error adding contact`)
@@ -104,8 +104,6 @@ const App = () => {
               setState(false)
             }, 5000)
         })
-
-      console.log(`Added ${newName}`)
     }
   }
 
@@ -152,7 +150,6 @@ const App = () => {
             setState(false)
           }, 5000);
         })
-
         .catch(error => {
           setMessage(`Information of ${person.name} has already been removed from server`)
           console.log(`Information of ${person.name} has already been removed from server`)
