@@ -2,7 +2,7 @@ import axios from "axios";
 
 //Componentes que manejan la comunicación con el servidor
 
-const url = 'http://localhost:3001/persons'
+const url = 'https://phonebook2-mongodb.onrender.com/api/persons'
 
 //Select *
 const getAll = () => {
