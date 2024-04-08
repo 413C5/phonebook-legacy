@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# Phonebook App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Phonebook is an app that lets users manage their contacts. You can add, update, or delete contacts, and there's a search filter for quick access. Notifications confirm each action. Plus, once a contact is deleted, you can't modify or delete their info.The application stores all contacts in a MongoDB database.
+
+# Try out this app:
+
+You can experience the app by clicking [this link](https://fsopen2023-phonebook-backend.onrender.com).
+
+# Project Details:
+
+This project is part of the [fsopen2023](https://github.com/413C5/fsopen2023/tree/main/part2/phonebook) repository, specifically located in the phonebook directory.It's backend is found on [this repository](https://github.com/413C5/phonebook-backend).
+
+Feel free to explore the [fsopen2023](https://github.com/413C5/fsopen2023) repository to understand its broader context and discover related projects.
+
+Note: This repository is considered legacy. For the latest updates and developments, please visit the newest repository.
+
+# Getting Started with Create React App
 
 ## Available Scripts
 
@@ -68,3 +82,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### What does this do?
+This project displays a phonebook, where:
+-Name/Number of a person can be added
+-People can be searched by using a filter
+-Number can be updated
+-People can be deleted
+-When doing a successfull operation , a notification is shown
+
+Axios is used in order to communicate with a backend (in port 3001), data is stored in db.json file
