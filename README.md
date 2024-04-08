@@ -12,7 +12,7 @@ This project is part of the [fsopen2023](https://github.com/413C5/fsopen2023/tre
 
 Feel free to explore the [fsopen2023](https://github.com/413C5/fsopen2023) repository to understand its broader context and discover related projects.
 
-Note: This repository is considered legacy. For the latest updates and developments, please visit the newest repository.
+Note: This repository is considered legacy. For the latest updates and developments, please visit the [newest repository](https://github.com/413C5/fsopen2023/tree/main/part2/phonebook).
 
 # Getting Started with Create React App
 
